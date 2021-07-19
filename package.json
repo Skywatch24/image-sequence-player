@@ -35,7 +35,7 @@
   "scripts": {
     "start": "webpack-dev-server --inline --config ./config/webpack.dev.config.js --open chrome",
     "build": "webpack --config ./config/webpack.prod.config.js",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "compile": "rm -rf lib && cross-env NODE_ENV=production babel src --out-dir lib --copy-files"
   },
   "devDependencies": {
