@@ -7,6 +7,11 @@
 
 A video player that playing video with image sequence.
 
+Demo: https://skywatch24.github.io/image-sequence-player/
+
+<img width="642" alt="Demo Img" src="https://user-images.githubusercontent.com/16790195/126168566-9d94b6f0-c792-48a2-a494-ac84477583eb.png">
+
+
 ## Installation
 
 ```
@@ -45,6 +50,26 @@ CDN:
     var player = new FramePlayer('my-player', options);
     player.play();
 </script>
+```
+
+## Image JSON Format:
+
+The player can supports jpg, jpeg, png, base64 etc.
+
+```
+{
+  "frames": [
+    "https://your_image_server/0001.jpg",
+    "https://your_image_server/0002.jpg",
+    "https://your_image_server/0003.jpg",
+    "https://your_image_server/0004.jpg",
+    "https://your_image_server/0005.jpg",
+    "https://your_image_server/0006.jpg",
+    "https://your_image_server/0007.jpg",
+    "https://your_image_server/0008.jpg",
+    ...
+    ]
+}
 ```
 
 ## Methods
