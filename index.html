@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-widthinitial-cale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Image Sequence Playery</title>
+  </head>
+  <body>
+    <div id="my-player" class="frameplayer" data-vidsrc="/videos/s3.json"></div>
+    <script src="/skywatch.min.js"></script>
+  </body>
+  <script>
+    var options = {
+      rate: 1,
+      controls: true,
+      autoplay: true,
+      backwards: false,
+      startFrame: 0,
+      width: '640px',
+      height: '390px',
+      //progressBarColor: '#57d4b2',
+      // 'radius': '50%'
+    };
+    var player = new FramePlayer('my-player', options);
+    player.play();
+  </script>
+</html>
