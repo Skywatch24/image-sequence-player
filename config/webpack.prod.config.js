@@ -14,12 +14,12 @@ const CopyPlugin = require('copy-webpack-plugin');
 module.exports = merge(common, {
   mode: 'production',
   entry: {
-    'lib.bundle': './src/index.js',
+    'lib.min': './src/index.js',
   },
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, '../dist'),
-    publicPath: '/',
+    publicPath: '/image-sequence-player/',
   },
   plugins: [
     // new BundleAnalyzerPlugin(),
