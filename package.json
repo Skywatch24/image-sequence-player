@@ -24,12 +24,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:Skywatch24/JS-Library.git"
+    "url": "git@github.com:Skywatch24/image-sequence-player.git"
   },
   "bugs": {
-    "url": "https://github.com/Skywatch24/JS-Library/issues"
+    "url": "https://github.com/Skywatch24/image-sequence-player/issues"
   },
-  "homepage": "https://github.com/Skywatch24/JS-Library#readme",
+  "homepage": "https://github.com/Skywatch24/image-sequence-player#readme",
   "license": "Apache-2.0",
   "author": "mengpeilee <asdfg3865@gmail.com>",
   "scripts": {
