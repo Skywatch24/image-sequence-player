@@ -1,0 +1,82 @@
+{
+  "name": "image-sequence-player",
+  "version": "1.0.0",
+  "description": "A video player that playing video with image sequence.",
+  "copyright": "Copyright Skywatch, Inc. <https://www.service.skywatch24.com/>",
+  "keywords": [
+    "image",
+    "img",
+    "player",
+    "play",
+    "frame",
+    "video",
+    "json",
+    "images",
+    "mobile",
+    "image sequence"
+  ],
+  "files": [
+    "dist",
+    "src",
+    "images",
+    "LICENSE",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Skywatch24/JS-Library.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Skywatch24/JS-Library/issues"
+  },
+  "homepage": "https://github.com/Skywatch24/JS-Library#readme",
+  "license": "Apache-2.0",
+  "author": "mengpeilee <asdfg3865@gmail.com>",
+  "scripts": {
+    "start": "webpack-dev-server --inline --config ./config/webpack.dev.config.js --open chrome",
+    "build": "webpack --config ./config/webpack.prod.config.js",
+    "compile": "rm -rf lib && cross-env NODE_ENV=production babel src --out-dir lib --copy-files"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.10.5",
+    "@babel/polyfill": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
+    "@svgr/cli": "^5.4.0",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-react-remove-properties": "^0.3.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^6.4.1",
+    "core-js": "^3.6.5",
+    "cross-env": "^7.0.3",
+    "css-loader": "^3.6.0",
+    "eslint": "^6.8.0",
+    "eslint-config-babel": "^9.0.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "file-loader": "^6.0.0",
+    "html-webpack-plugin": "^4.3.0",
+    "jest": "^26.2.2",
+    "less": "^3.12.2",
+    "less-loader": "^6.2.0",
+    "moxios": "^0.4.0",
+    "node-sass": "^4.14.1",
+    "prettier": "^1.19.1",
+    "sass-loader": "^9.0.2",
+    "speed-measure-webpack-plugin": "^1.3.3",
+    "style-loader": "^1.2.1",
+    "terser-webpack-plugin": "^3.0.7",
+    "url-loader": "^4.1.0",
+    "webpack": "^4.43.0",
+    "webpack-bundle-analyzer": "^4.1.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.0.9"
+  },
+  "dependencies": {}
+}
