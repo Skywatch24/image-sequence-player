@@ -14,7 +14,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 module.exports = merge(common, {
   mode: 'production',
   entry: {
-    'skywatch.min': './src/index.js',
+    'lib.min': './src/index.js',
   },
   output: {
     filename: '[name].js',
