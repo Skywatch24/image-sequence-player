@@ -13,21 +13,21 @@
   </head>
   <body>
     <div id="my-player" class="frameplayer" data-vidsrc="/videos/s3.json"></div>
+    <script>
+      var options = {
+        rate: 1,
+        controls: true,
+        autoplay: true,
+        backwards: false,
+        startFrame: 0,
+        width: '640px',
+        height: '390px',
+        //progressBarColor: '#57d4b2',
+        // 'radius': '50%'
+      };
+      var player = new FramePlayer('my-player', options);
+      player.play();
+    </script>
     <script src="/lib.min.js"></script>
   </body>
-  <script>
-    var options = {
-      rate: 1,
-      controls: true,
-      autoplay: true,
-      backwards: false,
-      startFrame: 0,
-      width: '640px',
-      height: '390px',
-      //progressBarColor: '#57d4b2',
-      // 'radius': '50%'
-    };
-    var player = new FramePlayer('my-player', options);
-    player.play();
-  </script>
 </html>
