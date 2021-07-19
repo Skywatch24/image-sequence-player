@@ -1,11 +1,11 @@
-<h2 align="center">
-  image-sequence-player
-</h2>
+<h2 align="center">image-sequence-player</h2>
 
 <p align="center">
   <a href="https://www.npmjs.com/package/image-sequence-player"><img src="https://img.shields.io/npm/v/image-sequence-player?style=flat-square"></a>
   <a href="https://www.npmjs.com/package/@skywatch/js"><img src="https://img.shields.io/npm/dm/image-sequence-player?style=flat-square"></a>
 </p>
+
+A video player that playing video with image sequence.
 
 ## Installation
 
@@ -70,3 +70,8 @@ CDN:
 | `startFrame`       | Number.  | 0       | Decide which frame will be play at the beginning.     |
 | `backwards`        | Boolean. | False   | If true, the video will be reversed at the beginning. |
 | `progressBarColor` | String.  | '#f00'  | The color of progress bar of current time.            |
+
+## Note
+
+- This project is inspired by [frame-player](https://github.com/vagnervjs/frame-player).
+- Licensed under the Apache License, Version 2.0 (the "License");
