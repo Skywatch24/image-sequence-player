@@ -6,10 +6,12 @@ import playIcon from '../images/play-button.svg';
 import fullscreenIcon from '../images/fullscreen-button.svg';
 import './Frameplayer.css';
 
-var FramePlayer = function(el, options) {
+var FramePlayer = function(el, options, jsonFile = null) {
   this.divCont = document.getElementById(el);
   this.elem = el;
-  this.jsonVideoSrc = this.divCont.getAttribute('data-vidsrc');
+  this.jsonVideoSrc = jsonFile
+    ? jsonFile
+    : this.divCont.getAttribute('data-vidsrc');
   (this.rate = 20),
     (this.controls = true),
     (this.paused = false),
@@ -19,7 +21,6 @@ var FramePlayer = function(el, options) {
   this.currentFrame = -1;
   this.startFrame = 0;
   this.frameLength = 0;
-  this.radius = null;
   this.progressMouseDown = false;
 
   this.progressBarColor = '#f00';
@@ -55,19 +56,6 @@ FramePlayer.prototype.setOptions = function(options) {
   }
   if ('backwards' in options) {
     this.backwards = options.backwards;
-  }
-  if ('radius' in options) {
-    var currentStyle = document.createElement('style');
-    currentStyle.setAttribute('id', 'style-' + this.elem);
-    currentStyle.innerHTML =
-      '#' +
-      this.elem +
-      ', .frames-' +
-      this.elem +
-      '{ border-radius: ' +
-      options.radius +
-      '; overflow: hidden;}';
-    document.head.appendChild(currentStyle);
   }
   if ('progressBarColor' in options) {
     this.progressBarColor = options.progressBarColor;
@@ -445,40 +433,49 @@ FramePlayer.prototype.setFilter = function(filter) {
 };
 
 FramePlayer.prototype.getFile = function(src, callback) {
-  var _HTTP = new XMLHttpRequest(),
-    _self = this,
-    p = document.createElement('p');
+  var _self = this;
 
-  if (_HTTP) {
-    _HTTP.open('GET', src, true);
-    _HTTP.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
-    _HTTP.send(null);
+  if (typeof src === 'string') {
+    var _HTTP = new XMLHttpRequest(),
+      p = document.createElement('p');
 
-    _HTTP.onprogress = function() {
-      p.innerHTML = 'Loading...';
-      p.setAttribute('class', 'fp-loading');
-      _self.divCont.appendChild(p);
-    };
+    if (_HTTP) {
+      _HTTP.open('GET', src, true);
+      _HTTP.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+      _HTTP.send(null);
 
-    if (typeof _HTTP.onload !== undefined) {
-      _HTTP.onload = function() {
-        _self.divCont.removeChild(p);
-        _self.jsonVideoFile = JSON.parse(this.responseText);
-        _self.frameLength = _self.jsonVideoFile.frames.length;
-        callback(_self);
-        _HTTP = null;
+      _HTTP.onprogress = function() {
+        p.innerHTML = 'Loading...';
+        p.setAttribute('class', 'fp-loading');
+        _self.divCont.appendChild(p);
       };
-    } else {
-      _HTTP.onreadystatechange = function() {
-        if (_HTTP.readyState === 4) {
+
+      if (typeof _HTTP.onload !== undefined) {
+        _HTTP.onload = function() {
           _self.divCont.removeChild(p);
           _self.jsonVideoFile = JSON.parse(this.responseText);
           _self.frameLength = _self.jsonVideoFile.frames.length;
           callback(_self);
           _HTTP = null;
-        }
-      };
+        };
+      } else {
+        _HTTP.onreadystatechange = function() {
+          if (_HTTP.readyState === 4) {
+            _self.divCont.removeChild(p);
+            _self.jsonVideoFile = JSON.parse(this.responseText);
+            _self.frameLength = _self.jsonVideoFile.frames.length;
+            callback(_self);
+            _HTTP = null;
+          }
+        };
+      }
+    } else {
+      throw 'Error loading file.';
     }
+  } else if (src !== null) {
+    _self.jsonVideoFile = src;
+    _self.frameLength = _self.jsonVideoFile.frames.length;
+    callback(_self);
   } else {
     throw 'Error loading file.';
   }
