@@ -45,10 +45,42 @@ CDN:
         startFrame: 0,
         width: '640px',
         height: '390px',
+        progressBarColor: "#f00"
     };
     var player = new FramePlayer('my-player', options);
     player.play();
 </script>
+```
+
+React
+
+```javascript
+import React, {useRef, useEffect} from 'react';
+import FramePlayer from 'image-sequence-player';
+import videoFile from 'YOUR_JSON_PATH';
+
+const APP = () => {
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    var options = {
+      rate: 1,
+      controls: true,
+      autoplay: true,
+      backwards: false,
+      startFrame: 0,
+      width: '640px',
+      height: '390px',
+      progressBarColor: '#f00',
+    };
+    const player = FramePlayer('my-player', options, videoFile);
+    player.play();
+  }, []);
+
+  return <div ref={containerRef} id="my-player" className="frameplayer"></div>;
+};
+
+export default APP;
 ```
 
 ## Image JSON Format:
