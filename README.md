@@ -73,7 +73,7 @@ const APP = () => {
       height: '390px',
       progressBarColor: '#f00',
     };
-    const player = FramePlayer('my-player', options, videoFile);
+    const player = new FramePlayer('my-player', options, videoFile);
     player.play();
   }, []);
 
