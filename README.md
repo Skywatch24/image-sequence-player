@@ -11,7 +11,6 @@ Demo: https://skywatch24.github.io/image-sequence-player/
 
 <img width="642" alt="Demo Img" src="https://user-images.githubusercontent.com/16790195/126168566-9d94b6f0-c792-48a2-a494-ac84477583eb.png">
 
-
 ## Installation
 
 ```
@@ -34,7 +33,7 @@ CDN:
 
 ```javascript
 <body>
-    <div id="my-player" class="frameplayer" data-vidsrc="./videos/s3.json"></div>
+    <div id="my-player" class="frameplayer" data-vidsrc="./path-to/images.json"></div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/image-sequence-player/dist/lib.min.js"></script>
 <script>
@@ -88,11 +87,11 @@ The player can supports jpg, jpeg, png, base64 etc.
 | Property           | Type     | Default | Description                                           |
 | ------------------ | -------- | ------- | ----------------------------------------------------- |
 | `rate`             | Number.  | 20      | Video frame rate.                                     |
-| `controls`         | Boolean. | True    | Displaycontrol bar or not.                            |
+| `controls`         | Boolean. | True    | Display control bar or not.                           |
 | `autoplay`         | Boolean. | False   | If ture, it will play the video at the beginning.     |
 | `width`            | String.  | '480px' | The width of video player.                            |
 | `height`           | String.  | '320px' | The height of video player.                           |
-| `startFrame`       | Number.  | 0       | Decide which frame will be play at the beginning.     |
+| `startFrame`       | Number.  | 0       | Decide which frame will be played at the beginning.   |
 | `backwards`        | Boolean. | False   | If true, the video will be reversed at the beginning. |
 | `progressBarColor` | String.  | '#f00'  | The color of progress bar of current time.            |
 
@@ -100,3 +99,4 @@ The player can supports jpg, jpeg, png, base64 etc.
 
 - This project is inspired by [frame-player](https://github.com/vagnervjs/frame-player).
 - Licensed under the Apache License, Version 2.0 (the "License");
+- Welcome to give a pull request!

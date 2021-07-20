@@ -1,9 +1,9 @@
 import helpers from './helper';
-import backwardIcon from '/images/backward-button.svg';
-import forwardIcon from '/images/forward-button.svg';
-import pauseIcon from '/images/pause-button.svg';
-import playIcon from '/images/play-button.svg';
-import fullscreenIcon from '/images/fullscreen-button.svg';
+import backwardIcon from '../images/backward-button.svg';
+import forwardIcon from '../images/forward-button.svg';
+import pauseIcon from '../images/pause-button.svg';
+import playIcon from '../images/play-button.svg';
+import fullscreenIcon from '../images/fullscreen-button.svg';
 import './Frameplayer.css';
 
 var FramePlayer = function(el, options) {

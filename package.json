@@ -1,8 +1,9 @@
 {
   "name": "image-sequence-player",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A video player that playing video with image sequence.",
   "copyright": "Copyright Skywatch, Inc. <https://www.service.skywatch24.com/>",
+  "main": "src/index.js",
   "keywords": [
     "image",
     "img",
